@@ -35,37 +35,41 @@
     }
 
     /* ၃။ စာသားကတ်ပြားများ (ဘယ်ဘက်အုပ်စု - .A, .C, .E, .G) */
-    .A, .C, .E, .G { 
-        display: inline-block;
-        transform-origin: right;
-        transition: 1.3s;
-        background: black;
-        width: 100%;                /* 300px ပုံသေအစား Screen ပေါ်မူတည်ပြီး ၁၀၀% အပြည့်ယူမယ် */
-        max-width: 320px;           /* ဒါပေမဲ့ 320px ထက်တော့ မကျော်စေနဲ့ */
-        margin: 0 auto 20px auto;   /* 💡 အလယ်တည့်တည့် ရောက်အောင် auto သုံးတယ် (350px margin ကို ဖြုတ်လိုက်တယ်) */
-        border: 2px solid orange;
-        border-radius: 3px 3px 6px;
-        box-shadow: 0px 0px 10px orange;
-        text-align: center;
-        align-self: flex-start;
-    }
+   /* ဘယ်ဘက်မှာ ရှိမယ့် စာသားများ */
+.A, .C, .E, .G { 
+    display: inline-block;
+    transform-origin: left;
+    transition: 1.3s;
+    background: black;
+    width: 100%;
+    max-width: 300px; /* screen ကြီးရင် 300px ပဲ ရှိမယ်၊ screen သေးရင် auto ကျုံ့သွားမယ် */
+    margin-bottom: 20px;
+    border: 2px solid orange;
+    border-radius: 3px 3px 6px;
+    box-shadow: 0px 0px 10px orange;
+    text-align: center;
+    
+    /* 💡 ဒါလေး အသစ်ပြောင်းထည့်ပါ - သူ့ကိုယ်သူ ဘယ်ဘက်အစွန်းမှာပဲ ကပ်ထားဖို့ */
+    align-self: flex-start; 
+}
 
-    /* ၄။ စာသားကတ်ပြားများ (ညာဘက်အုပ်စု - .B, .D, .F) */
-    .B, .D, .F {
-        display: inline-block;
-        transform-origin: right;
-        transition: 1.3s;
-        background: black;
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto 20px auto;   /* 💡 margin-left: 30px ကို ဖြုတ်ပြီး auto ပြောင်းလိုက်တယ် */
-        border: 2px solid orange;
-        border-radius: 3px 3px 6px;
-        box-shadow: 0px 0px 10px orange;
-        text-align: center;
-        align-self: flex-end;
-    }
-
+/* ညာဘက်မှာ ရှိမယ့် စာသားများ */
+.B, .D, .F {
+    display: inline-block;
+    transform-origin: right;
+    transition: 1.3s;
+    background: black;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    border: 2px solid orange;
+    border-radius: 3px 3px 6px;
+    box-shadow: 0px 0px 10px orange;
+    text-align: center;
+    
+    /* 💡 ဒါလေး အသစ်ပြောင်းထည့်ပါ - သူ့ကိုယ်သူ ညာဘက်အစွန်းမှာပဲ ကပ်ထားဖို့ */
+    align-self: flex-end; 
+}
     /* စာသားအရောင်များ */
     .A { color: #d4fc79; }
     .B { color: #70e2ff; }

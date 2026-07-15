@@ -6,115 +6,160 @@
     <title>Document</title>
 </head>
 <style>
-    body{
+    /* ၁။ Layout တစ်ခုလုံးကို Container အဖြစ် သတ်မှတ်ခြင်း */
+    body {
         display: flex;
-        flex-direction: row;
-      
+        flex-direction: row;        /* ကွန်ပျူတာမှာ ဘယ်ညာ ဘေးချင်းယှဉ်ပြမယ် */
         justify-content: center;
-        align-items: center;
-        background-image: url(images\ \(2\).jpg);
+        align-items: flex-start;    /* အပေါ်ထိပ်ချင်း ညီနေအောင် */
+        gap: 40px;                  /* ဗီဒီယိုနဲ့ စာသားကြား အကွာအဝေး */
+        background-image: url('images (2).jpg'); /* နောက်ခံပုံ */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-       }
-    .A,.C, .E, .G { 
+        background-attachment: fixed; /* နောက်ခံပုံကို ငြိမ်နေစေဖို့ */
+        padding: 40px 20px;
+        margin: 0;
+        min-height: 100vh;
+        box-sizing: border-box;
+        overflow-x: hidden;         /* Hover လုပ်တဲ့အခါ ဘေးကိုကျော်မထွက်စေဖို့ */
+    }
+
+    /* ၂။ Wrapper တစ်ခုချင်းစီရဲ့ Design (ဗီဒီယိုအုပ်စု နဲ့ စာသားအုပ်စု) */
+    .wrapper {
+        flex: 1;
+        max-width: 500px;           /* Screen ကြီးရင်လည်း 500px ထက် ပိုမကြီးစေဖို့ */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ၃။ စာသားကတ်ပြားများ (ဘယ်ဘက်အုပ်စု - .A, .C, .E, .G) */
+    .A, .C, .E, .G { 
         display: inline-block;
-      transform-origin: right;
-      transition:1.3s;
-      background: black;
-      width: 300px;
-      margin-bottom: 20px;
-      border: 2px solid orange;
-      border-radius: 3px 3px 6px;
-      box-shadow: 0px 0px 10px orange;
-      margin-left: 350px;
-      text-align: center;
+        transform-origin: right;
+        transition: 1.3s;
+        background: black;
+        width: 100%;                /* 300px ပုံသေအစား Screen ပေါ်မူတည်ပြီး ၁၀၀% အပြည့်ယူမယ် */
+        max-width: 320px;           /* ဒါပေမဲ့ 320px ထက်တော့ မကျော်စေနဲ့ */
+        margin: 0 auto 20px auto;   /* 💡 အလယ်တည့်တည့် ရောက်အောင် auto သုံးတယ် (350px margin ကို ဖြုတ်လိုက်တယ်) */
+        border: 2px solid orange;
+        border-radius: 3px 3px 6px;
+        box-shadow: 0px 0px 10px orange;
+        text-align: center;
     }
+
+    /* ၄။ စာသားကတ်ပြားများ (ညာဘက်အုပ်စု - .B, .D, .F) */
     .B, .D, .F {
-          display: inline-block;
-      transform-origin: right;
-      transition:1.3s;
-      background: black;
-      width: 300px;
-      margin-bottom: 20px;
-      border: 2px solid orange;
-      border-radius: 3px 3px 6px;
-      box-shadow: 0px 0px 10px orange;
-      margin-left: 30px;
-      text-align: center;
+        display: inline-block;
+        transform-origin: right;
+        transition: 1.3s;
+        background: black;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 20px auto;   /* 💡 margin-left: 30px ကို ဖြုတ်ပြီး auto ပြောင်းလိုက်တယ် */
+        border: 2px solid orange;
+        border-radius: 3px 3px 6px;
+        box-shadow: 0px 0px 10px orange;
+        text-align: center;
     }
-   
 
-    .A {color: #d4fc79;   }
-    .B{ color: #70e2ff; }
-    .C{color: #00c996;}
-    .D {color:green ;}
-    .E {color: greenyellow;}
-    .F {color: blueviolet;}
-    .G { color: blue;}
+    /* စာသားအရောင်များ */
+    .A { color: #d4fc79; }
+    .B { color: #70e2ff; }
+    .C { color: #00c996; }
+    .D { color: green; }
+    .E { color: greenyellow; }
+    .F { color: blueviolet; }
+    .G { color: blue; }
 
-    .A:hover,
-    .C:hover,
-    .E:hover {
-        transform: translate(-100px) scale(1.9);
+    /* Hover Effects များ (ဖုန်းမှာပါ ကြည့်ကောင်းအောင် translate တန်ဖိုးတွေကို လျှော့ထားပါတယ်) */
+    .A:hover, .C:hover, .E:hover {
+        transform: translateX(-20px) scale(1.2); /* ဘေးကိုအများကြီးမထွက်ဘဲ scale ကို သင့်တော်သလို ညှိထားတယ် */
         background: orange;
-       
     }
-     .B:hover{
-         transform: translate(-100px, 200px) scale(1.9);
-         background: #00c996;
-     }
-     
-     .D:hover{
-         transform: translate(-130px, 180px) scale(1.9);
-         background: #00c996;
-     }
-     .F:hover,
-     .G:hover {
-          transform: translate(-100px, -150px) scale(1.9);
-          background: #00c996;
-       
+    
+    .B:hover {
+        transform: translate(-20px, 10px) scale(1.2);
+        background: #00c996;
     }
-    h1{
+    
+    .D:hover {
+        transform: translate(-20px, 10px) scale(1.2);
+        background: #00c996;
+    }
+    
+    .F:hover, .G:hover {
+        transform: translate(-20px, -10px) scale(1.2);
+        background: #00c996;
+    }
+
+    /* ခေါင်းစဉ် (H1) */
+    h1 {
         color: blue;
         font-weight: bolder;
         background: black;
-        width: 400px;
-         border: 2px solid green;
-      border-radius: 3px 3px 6px;
-      box-shadow: 0px 0px 10px green;
-      text-align: center;
-      padding: 20px;
-      transition: 2s;
-      margin-left: 80px;
+        width: 100%;
+        max-width: 350px;
+        border: 2px solid green;
+        border-radius: 3px 3px 6px;
+        box-shadow: 0px 0px 10px green;
+        text-align: center;
+        padding: 15px 0px;
+        transition: 2s;
+        margin: 0 auto 30px auto;   /* margin-left: 80px ကို ဖြုတ်ပြီး auto သုံးထားတယ် */
     }
+    
     h1:hover {
-        transform: translate(-130px, 200px) scale(2.7);
+        transform: scale(1.15);     /* အောက်ကိုအများကြီးဆင်းရင် စာသားတွေနဲ့ ထပ်သွားတတ်လို့ scale တင် သုံးထားတယ် */
         background: white;
     }
-    .video-container {
-    text-align: center; /* ဗီဒီယိုကို အလယ်တည့်တည့် ရောက်စေဖို့ */
-    margin-top: 30px;   /* အပေါ်ကစာသားတွေနဲ့ ကပ်မနေအောင် အကွာအဝေးပေးတာ */
-    margin-bottom: 30px;
-}
-img {
-    margin-top: 10px;
-    border-radius: 50px;
-    border: 3px solid green;
-    box-shadow: 0px 0px 15px orange;
-    transition: 3s;
- }
-img:hover {
-    transform: translate(390px, -150px) scale(2.5);
-}
-iframe {
-    border: 3px solid #00c996; /* ဗီဒီယိုဘောင်လေးကို လှလှပပ အရောင်ထည့်တာ */
-    border-radius: 10px;       /* ထောင့်လေးတွေကို လုံးစေတာ */
-    box-shadow: 0px 0px 15px orange; /* ဘေးပတ်ပတ်လည်ကို အရိပ်ထည့်တာ */
-    margin-bottom: 40px;
-}
-  
 
+    /* ဗီဒီယို (Iframe) ကို Responsive ဖြစ်အောင် ညှိခြင်း */
+    iframe {
+        border: 3px solid #00c996;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px orange;
+        margin-bottom: 20px;
+        width: 100%;                /* 💡 ဖုန်းနဲ့ကြည့်ရင် Screen အပြည့် ဖြစ်သွားအောင် */
+        max-width: 460px;           /* 💡 ကွန်ပျူတာမှာဆို 460px ထက် ပိုမကြီးအောင် */
+        height: auto;
+        aspect-ratio: 16 / 9;      /* ဗီဒီယို အချိုးအစား မပျက်စေဖို့ */
+    }
+
+    /* ပုံ (Image) ကို Responsive ဖြစ်အောင် ညှိခြင်း */
+    img {
+        margin-top: 10px;
+        border-radius: 50px;
+        border: 3px solid green;
+        box-shadow: 0px 0px 15px orange;
+        transition: 3s;
+        width: 100%;                /* 💡 ပုံကိုလည်း ဖုန်း screen အတိုင်း လိုက်ကျုံ့စေဖို့ */
+        max-width: 460px;
+        height: auto;
+    }
+    
+    img:hover {
+        transform: scale(1.1);      /* Hover လုပ်တဲ့အခါ translate ကြီးကြီးပေးရင် screen အပြင်ထွက်သွားလို့ scale သာ သုံးထားတယ် */
+    }
+
+    /* 📱 ၅။ ဖုန်းနှင့် Tablet များအတွက် (Screen အကျယ် 900px ထက် သေးသွားရင်) */
+    @media (max-width: 900px) {
+        body {
+            flex-direction: column; /* 💡 အပေါ်အောက် တန်းစီဆင်းသွားစေမယ် */
+            align-items: center;
+            padding: 20px 10px;
+        }
+
+        .wrapper {
+            width: 100%;
+        }
+
+        /* ဖုန်းပေါ်မှာ hover လုပ်တဲ့အခါ လှုပ်ရှားမှုတွေကို သာသာယာယာပဲ ဖြစ်စေချင်လို့ ချိန်ညှိထားပါတယ် */
+        .A:hover, .B:hover, .C:hover, .D:hover, .E:hover, .F:hover, .G:hover {
+            transform: scale(1.05); /* ဘေးဘယ်ညာ မရွေ့စေဘဲ နည်းနည်းပဲ ကြီးစေမယ် */
+        }
+    }
 </style>
 <body>
    

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: row;
+      
+        justify-content: center;
+        align-items: center;
+        background-image: url(images\ \(2\).jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+       }
+    .A,.C, .E, .G { 
+        display: inline-block;
+      transform-origin: right;
+      transition:1.3s;
+      background: black;
+      width: 300px;
+      margin-bottom: 20px;
+      border: 2px solid orange;
+      border-radius: 3px 3px 6px;
+      box-shadow: 0px 0px 10px orange;
+      margin-left: 350px;
+      text-align: center;
+    }
+    .B, .D, .F {
+          display: inline-block;
+      transform-origin: right;
+      transition:1.3s;
+      background: black;
+      width: 300px;
+      margin-bottom: 20px;
+      border: 2px solid orange;
+      border-radius: 3px 3px 6px;
+      box-shadow: 0px 0px 10px orange;
+      margin-left: 30px;
+      text-align: center;
+    }
+   
+
+    .A {color: #d4fc79;   }
+    .B{ color: #70e2ff; }
+    .C{color: #00c996;}
+    .D {color:green ;}
+    .E {color: greenyellow;}
+    .F {color: blueviolet;}
+    .G { color: blue;}
+
+    .A:hover,
+    .C:hover,
+    .E:hover {
+        transform: translate(-100px) scale(1.9);
+        background: orange;
+       
+    }
+     .B:hover{
+         transform: translate(-100px, 200px) scale(1.9);
+         background: #00c996;
+     }
+     
+     .D:hover{
+         transform: translate(-130px, 180px) scale(1.9);
+         background: #00c996;
+     }
+     .F:hover,
+     .G:hover {
+          transform: translate(-100px, -150px) scale(1.9);
+          background: #00c996;
+       
+    }
+    h1{
+        color: blue;
+        font-weight: bolder;
+        background: black;
+        width: 400px;
+         border: 2px solid green;
+      border-radius: 3px 3px 6px;
+      box-shadow: 0px 0px 10px green;
+      text-align: center;
+      padding: 20px;
+      transition: 2s;
+      margin-left: 80px;
+    }
+    h1:hover {
+        transform: translate(-130px, 200px) scale(2.7);
+        background: white;
+    }
+    .video-container {
+    text-align: center; /* ဗီဒီယိုကို အလယ်တည့်တည့် ရောက်စေဖို့ */
+    margin-top: 30px;   /* အပေါ်ကစာသားတွေနဲ့ ကပ်မနေအောင် အကွာအဝေးပေးတာ */
+    margin-bottom: 30px;
+}
+img {
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 3px solid green;
+    box-shadow: 0px 0px 15px orange;
+    transition: 3s;
+ }
+img:hover {
+    transform: translate(390px, -150px) scale(2.5);
+}
+iframe {
+    border: 3px solid #00c996; /* ဗီဒီယိုဘောင်လေးကို လှလှပပ အရောင်ထည့်တာ */
+    border-radius: 10px;       /* ထောင့်လေးတွေကို လုံးစေတာ */
+    box-shadow: 0px 0px 15px orange; /* ဘေးပတ်ပတ်လည်ကို အရိပ်ထည့်တာ */
+    margin-bottom: 40px;
+}
+  
+
+</style>
+<body>
+   
+ <div class="wrapper">
+    
+    <iframe width="460" height="215"
+     src="https://www.youtube.com/embed/-aH_kUIPzn0?si=4G_b0AAqrUupkL98" 
+     title="YouTube video player"
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+       encrypted-media; gyroscope; picture-in-picture; web-share" 
+       referrerpolicy="strict-origin-when-cross-origin" 
+       allowfullscreen>
+    </iframe>
+    <div class="Image-box">
+        <img src="images.jpg" alt="speed" width="460" height="215">
+    </div>
+    </div>
+
+    <div class="wrapper">
+         <h1>Speed Worldcup Songd</h1>
+    <div class="A">
+       <p> We gotta rise 'til we rise to the end</p>
+       </div>
+       <div class="B">
+       <p>We gotta dream 'til we dream 'til we win</p>
+       </div>
+        <div class="C">
+       <p>Give me the cup, the championship</p>
+       </div>
+        <div class="D">
+       <p>Told them, "I'm bringing it back to the crib"</p>
+       </div>
+        <div class="E">
+       <p>(Olé, olé) To' el mundo mirando (Oh)</p>
+       </div>
+        <div class="F">
+       <p>Everybody gritando (Ayy)</p>
+       </div>
+        <div class="G">
+       <p>La bola girando (Oh)Uno, dos, tres, cuatro</p>
+    </div>
+    </div>
+</body>
+</html>
